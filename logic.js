@@ -22,18 +22,19 @@ async function getDataApi(){
 
     try{
 
-        const response = await fetch("https://fail-in-public-api.onrender.com/posts");
+        const response = await fetch("https://fail-in-public-api-yzd5.onrender.com/posts");
 
         if(!response.ok){
             throw new Error("Can't fetch");
         }
 
         const data = await response.json();
-        console.log(data.res);
         const results = data.res;
-        //console.log(response);
+        const container = document.getElementById("msgWrapper");
 
-        for(let i = 0; i < results.length; i++){
+        container.innerHTML = "";
+
+        for(let i = results.length - 1; i >= 0; i--){
 
             createDiv(results[i].username, results[i].message);
         }

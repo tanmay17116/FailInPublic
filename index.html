@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fail In Public</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Inter:wght@400&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-50 flex items-center justify-center min-h-screen font-sans">
@@ -16,12 +17,11 @@
         <div class="chat-container bg-white shadow-lg rounded-lg overflow-hidden">
             <div id="msgWrapper" class="messages-wrapper h-96 overflow-y-auto p-6 space-y-4">
                 <!-- Sample Messages -->
-                
+                <p id="loading-indicator" class="text-center text-gray-500">Loading your fails...</p>
             </div>
         </div>
     </div>
     
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="logic.js"></script>
 </body>
 </html>
