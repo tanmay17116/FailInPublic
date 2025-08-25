@@ -6,6 +6,8 @@
     <title>Fail In Public</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Inter:wght@400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
 </head>
 <body class="bg-gray-50 flex items-center justify-center min-h-screen font-sans">
 
@@ -13,15 +15,42 @@
 
         <h1 class="text-5xl font-extrabold text-center mb-8 text-gray-700" style="font-family: 'Merriweather', serif;">FAIL IN PUBLIC</h1>
         
+        <div class="controls-container flex justify-between items-start mb-4 gap-4">
+    
+            <!-- All filter buttons are grouped here and will wrap on their own -->
+            <div id="filter-buttons" class="flex flex-wrap gap-2">
+                <button class="filter-btn active bg-teal-700 text-white px-3 py-1 rounded-md" data-lang="All">All</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 px-3 py-1 rounded-md" data-lang="javascript">JavaScript</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 px-3 py-1 rounded-md" data-lang="python">Python</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 px-3 py-1 rounded-md" data-lang="java">Java</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 px-3 py-1 rounded-md" data-lang="csharp">C#</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 px-3 py-1 rounded-md" data-lang="c++">C++</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 px-3 py-1 rounded-md" data-lang="typescript">TypeScript</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 px-3 py-1 rounded-md" data-lang="php">PHP</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 px-3 py-1 rounded-md" data-lang="ruby">Ruby</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 px-3 py-1 rounded-md" data-lang="go">Go</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 px-3 py-1 rounded-md" data-lang="rust">Rust</button>
+            </div>
+        
+            <!-- The dropdown is separate and won't shrink -->
+            <div class="sort-wrapper flex-shrink-0">
+                <select id="sort-select" class="bg-white border border-gray-300 rounded-md px-3 py-1">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                </select>
+            </div>
+        
+        </div>
+
         <div class="chat-container bg-white shadow-lg rounded-lg overflow-hidden">
             <div id="msgWrapper" class="messages-wrapper h-96 overflow-y-auto p-6 space-y-4">
                 <!-- Sample Messages -->
+                <p id="loading-indicator" class="text-center text-gray-500">Loading...</p>
                 
             </div>
         </div>
     </div>
     
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="logic.js"></script>
 </body>
 </html>
